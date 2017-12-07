@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sparkpost Recipient Composer</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="content">
+    <h1>Sparkpost email delivery</h1>
+    <p>This small page generates the <code>recipients</code> variable to be used with <a href="https://www.sparkpost.com/" target="_blank"><b>SparkPost</b></a> <a href="https://github.com/sparkpost/node-sparkpost" target="_blank">NodeJs Client library</a> when sending a <code>transmission</code>.</p>
+    <hr />
+    
+    <form class="text-center">
+      <p class="text-right">
+        <a href="#" class="add-row">add more emails</a>
+      </p>
+      <div class="rows"></div>
+      <p class="text-right help-block">
+        <i>empty emails will not be parsed</i>
+      </p>
+      <p>
+        <a href="#" class="btn btn-primary btn-parse">Parse recipients</a>
+      </p>
+    </form>
+    
+    <div style="display:none;">
+      <pre class="response"></pre>
+    </div>
+        
+    <footer>
+      <p class="text-center">See examples on how to send a <code>transmission</code> <a href="https://github.com/SparkPost/node-sparkpost/tree/master/examples/transmissions" target="_blank">on GitHub</a>.</p>
+    </footer>
+  </div>
+  
+  <!-- Template Row -->
+  <script id="tpl-row" type="text/x-handlebars-template">
+      <div class="form-group row">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <select class="form-control">
+              <option>To</option>
+              <option>Cc</option>
+              <option>Bcc</option>
+            </select>
+          </div>
+          <input type="text" class="form-control email-address" placeholder="email address">
+        </div>
+      </div>
+  </script>  
+  
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
